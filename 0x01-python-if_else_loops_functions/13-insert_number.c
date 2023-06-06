@@ -21,19 +21,23 @@ return (NULL);
 }
 new_node->n = number;
 new_node->next = NULL;
-
 if (*head == NULL)
 {
 *head = new_node;
 return (new_node);
 }
-
 prev = *head;
 curr = *head;
+if (number < (*head)->n)
+{
+new_node->next = curr;
+*head = new_node;
+return (new_node);
+}
 
 while (curr)
 {
-if (number > prev->n && number <= curr->n)
+if (number < curr->n && !found)
 {
 prev->next = new_node;
 new_node->next = curr;
@@ -43,8 +47,6 @@ prev = curr;
 curr = curr->next;
 }
 if (!found)
-{
 prev->next = new_node;
-}
 return (new_node);
 }
