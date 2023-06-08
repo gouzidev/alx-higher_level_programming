@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 import os
-os.write(1, str.encode("#pythoniscool\n"))
+message = "Hello, world!\n"; os.write(1, message.encode())
