@@ -9,13 +9,13 @@ if __name__ == "__main__":
     op = argv[2]
     b = int(argv[3])
     if op == "+":
-        res = a + b
+        res = add(a, b)
     elif op == "-":
-        res = a - b
-    elif op == "/" and b != 0:
-        res = a / b
+        res = sub(a, b)
+    elif op == "/":
+        res = div(a, b)
     elif op == "*":
-        res = a * b
+        res = mul(a, b)
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
