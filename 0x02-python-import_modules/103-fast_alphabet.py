@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for i in range(65, 91): print(chr(i), end="")
-print()
+from string import ascii_uppercase
+print(ascii_uppercase)
