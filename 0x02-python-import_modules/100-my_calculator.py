@@ -8,18 +8,17 @@ if __name__ == "__main__":
     a = int(argv[1])
     op = argv[2]
     b = int(argv[3])
+    good_op = False
     if op == "+":
         res = a + b
-        print("{} {} {} = {}".format(a, op, b, res))
     elif op == "-":
         res = a - b
-        print("{} {} {} = {}".format(a, op, b, res))
     elif op == "/":
         res = a / b
-        print("{} {} {} = {}".format(a, op, b, res))
     elif op == "*":
         res = a * b
-        print("{} {} {} = {}".format(a, op, b, res))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
+    print("{} {} {} = {}".format(a, op, b, res))
+    
