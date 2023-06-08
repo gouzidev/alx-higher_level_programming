@@ -12,9 +12,9 @@ if __name__ == "__main__":
         res = a + b
     elif op == "-":
         res = a - b
-    elif op == "/":
+    elif op == "/" and b != 0:
         res = a / b
-    elif op == "*" and b != 0:
+    elif op == "*":
         res = a * b
     else:
         print("Unknown operator. Available operators: +, -, * and /")
