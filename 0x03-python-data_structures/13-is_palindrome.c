@@ -32,7 +32,7 @@ int is_palindrome(listint_t **head)
     listint_t *prev = NULL;
     listint_t *curr = *head;
     listint_t *next = *head;
-    listint_t *next_next = *head;
+    listint_t *fast = *head;
     int palindrome_comp = 0;
 
     if (head == NULL || *head == NULL)
@@ -41,18 +41,18 @@ int is_palindrome(listint_t **head)
         return 1;
 
     next = curr->next;
-    next_next = curr->next->next;
+    fast = curr->next->next;
     prev = curr;
     curr->next = NULL;
     prev = curr;
     curr = next;
 
-    while (next_next)
+    while (fast)
     {
-        next_next = next_next->next;
-        if (next_next)
+        fast = fast->next;
+        if (fast)
         {
-            next_next = next_next->next;
+            fast = fast->next;
             next = curr->next;
             curr->next = prev;
             prev = curr;
