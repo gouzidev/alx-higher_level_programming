@@ -35,7 +35,7 @@ listint_t *next = *head;
 listint_t *next_next = *head;
 int palindrome_comp = 0;
 
-if (*head == NULL)
+if (head == NULL || *head == NULL)
 return (1);
 
 next = curr->next;
