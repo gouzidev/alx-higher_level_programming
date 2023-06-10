@@ -51,9 +51,9 @@ int is_palindrome(listint_t **head)
             prev = curr;
             curr = next;
         }
+        else
+            next = next->next;
     }
-    if (!fast)
-        next = next->next;
 
     palindrome_comp = comp_linked_lists(prev, next);
 
