@@ -21,38 +21,45 @@ h2 = h2->next;
 return (1);
 }
 
+
 /**
- * is_palindrome - checks if a linked list is a palindrome
+ * is_palindrome - prints all elements of a listint_t list
  * @head: pointer to pointer to head of list
- * Return: 1 if palindrome, 0 otherwise
+ * Return: 1 if pal else 0
  */
 int is_palindrome(listint_t **head)
 {
-listint_t *slow = *head;
-listint_t *fast = *head;
-listint_t *prev = NULL;
-listint_t *next = NULL;
-int palindrome_comp = 1;
+    listint_t *prev = NULL;
+    listint_t *curr = *head;
+    listint_t *next = *head;
+    listint_t *fast = *head;
+    int palindrome_comp = 0;
 
-if (head == NULL || *head == NULL)
-return (1);
+    if (head == NULL || *head == NULL)
+        return (1);
+    if ((*head)->n && (*head)->next == NULL)
+        return (1);
 
-while (fast && fast->next)
-{
-fast = fast->next->next;
+    next = curr->next;
+    fast = curr->next->next;
+    prev = curr;
+    curr->next = NULL;
+    prev = curr;
+    curr = next;
 
-next = slow->next;
-slow->next = prev;
-prev = slow;
-slow = next;
-}
+    while (fast && fast->next)
+    {
+            fast = fast->next;
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+    }
+    if (fast)
+        next = next->next;
 
-if (fast)
-{
-slow = slow->next;
-}
+    palindrome_comp = comp_linked_lists(prev, next);
 
-palindrome_comp = comp_linked_lists(prev, slow);
+    return (palindrome_comp);
 
-return (palindrome_comp);
 }
