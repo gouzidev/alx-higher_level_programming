@@ -6,4 +6,3 @@ def print_matrix_integer(matrix=[[]]):
             if i != len(arr) - 1:
                 print(" ", sep="", end="")
         print()
-        
