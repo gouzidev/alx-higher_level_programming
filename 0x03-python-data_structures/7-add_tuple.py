@@ -30,4 +30,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
                 tup.append(tuple_b[0])
                 tup.append(tuple_b[1])
                 return tuple(tup)
-
