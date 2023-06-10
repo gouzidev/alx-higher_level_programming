@@ -29,32 +29,32 @@ return (1);
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t *prev = NULL;
-    listint_t *next = NULL;
-    listint_t *slow = *head;
-    listint_t *fast = *head;
-    int palindrome_comp = 0;
+listint_t *prev = NULL;
+listint_t *next = NULL;
+listint_t *slow = *head;
+listint_t *fast = *head;
+int palindrome_comp = 1;
 
-    if (head == NULL || *head == NULL)
-        return (1);
-    if ((*head)->n && (*head)->next == NULL)
-        return 1;
+if (head == NULL || *head == NULL)
+return (1);
+if ((*head)->n && (*head)->next == NULL)
+return (1);
 
-    while (fast && fast->next)
-    {
-        fast = fast->next->next;
+while (fast && fast->next)
+{
+fast = fast->next->next;
 
-        next = slow->next;
-        slow->next = prev;
-        prev = slow;
-        slow = next;
-    }
+next = slow->next;
+slow->next = prev;
+prev = slow;
+slow = next;
+}
 
-    if (fast)
-        slow = slow->next;
+if (fast)
+slow = slow->next;
 
-    palindrome_comp = comp_linked_lists(prev, slow);
+palindrome_comp = comp_linked_lists(prev, slow);
 
-    return (palindrome_comp);
+return (palindrome_comp);
 
 }
