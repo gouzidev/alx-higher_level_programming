@@ -29,37 +29,37 @@ return (1);
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t *prev = NULL;
-    listint_t *curr = *head;
-    listint_t *next = *head;
-    listint_t *fast = *head;
-    int palindrome_comp = 0;
+listint_t *prev = NULL;
+listint_t *curr = *head;
+listint_t *next = *head;
+listint_t *fast = *head;
+int palindrome_comp = 0;
 
-    if (head == NULL || *head == NULL)
-        return (1);
-    if ((*head)->n && (*head)->next == NULL)
-        return (1);
+if (head == NULL || *head == NULL)
+return (1);
+if ((*head)->n && (*head)->next == NULL)
+return 1;
 
-    next = curr->next;
-    fast = curr->next->next;
-    prev = curr;
-    curr->next = NULL;
-    prev = curr;
-    curr = next;
+next = curr->next;
+fast = curr->next->next;
+prev = curr;
+curr->next = NULL;
+prev = curr;
+curr = next;
 
-    while (fast && fast->next)
-    {
-            fast = fast->next;
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-    }
-    if (fast)
-        next = next->next;
+while (fast && fast->next)
+{
+fast = fast->next;
+next = curr->next;
+curr->next = prev;
+prev = curr;
+curr = next;
+}
+if (fast)
+next = next->next;
 
-    palindrome_comp = comp_linked_lists(prev, next);
+palindrome_comp = comp_linked_lists(prev, next);
 
-    return (palindrome_comp);
+return (palindrome_comp);
 
 }
