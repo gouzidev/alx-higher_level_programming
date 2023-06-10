@@ -40,20 +40,16 @@ int is_palindrome(listint_t **head)
     if ((*head)->n && (*head)->next == NULL)
         return 1;
 
-    while (fast)
+    while (fast && fast->next)
     {
-        fast = fast->next;
-        if (fast)
-        {
-            fast = fast->next;
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        else
-            next = next->next;
+        fast = fast->next->next;
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
+    if (!fast)
+        next = next->next;
 
     palindrome_comp = comp_linked_lists(prev, next);
 
