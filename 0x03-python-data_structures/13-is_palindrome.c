@@ -9,16 +9,16 @@
 
 int comp_linked_lists(listint_t *h1, listint_t *h2)
 {
-while (h1 && h2)
-{
-if (h1->n != h2->n)
-{
-return (0);
-}
-h1 = h1->next;
-h2 = h2->next;
-}
-return (1);
+    while (h1 && h2)
+    {
+        if (h1->n != h2->n)
+        {
+            return (0);
+        }
+        h1 = h1->next;
+        h2 = h2->next;
+    }
+    return (1);
 }
 
 
@@ -38,7 +38,7 @@ int is_palindrome(listint_t **head)
     if (head == NULL || *head == NULL)
         return (1);
     if ((*head)->n && (*head)->next == NULL)
-        return 1;
+        return (1);
 
     while (fast)
     {
