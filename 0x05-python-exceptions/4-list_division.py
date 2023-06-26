@@ -1,6 +1,6 @@
-#\!usr/bin/python3
+#!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    l = []
+    returned_l = []
     i = 0
     while (i < list_length):
         try:
@@ -16,5 +16,5 @@ def list_division(my_list_1, my_list_2, list_length):
             res = 0
         finally:
             i += 1
-            l.append(res)
-    return l
+            returned_l.append(res)
+    return returned_l
