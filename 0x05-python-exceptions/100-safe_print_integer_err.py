@@ -7,7 +7,7 @@ def safe_print_integer_err(value):
     try:
         print("{:d}".format(value))
         return True
-    except Exception:
+    except Exception as e:
         sys.stderr.write("Exception: Unknown format code\
-                          '{}' for object of type 'str'\n".format(value))
+                          '{}' for object of type '{}'\n".format(e.args[0], e.args[1]))
         return False
