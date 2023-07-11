@@ -5,9 +5,11 @@
     5 line module comment.
 """
 def add_integer(a, b=98):
-    """ adds two integers 
-    (or floats)
-    and returns sum """
+    """ Add two integers and returns the result.
+    Args:
+        a (int): The first integer.
+        b (int): The secodn integer.
+    """
     if type(a) is not int:
         if type(a) is float:
             a = int(a)
