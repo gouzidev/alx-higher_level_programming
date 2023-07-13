@@ -1,19 +1,26 @@
 #!/usr/bin/python3
 """
-    Module containing function that prints a square
+    print
+    square
+    with size
 """
 
 
 def print_square(size):
-    """ Function that prints a square using '#' based on `size`.
-
-    Args:
-        size (int): The size of one side of the square.
     """
-
-    if type(size) is not int:
+    prints size of square
+    Args:
+        size: size lol
+    """
+    if type(size) not in [int, float]:
         raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
 
-    print(('#' * size + '\n') * size, end='')
+    if size < 0:
+        if type(size) == int:
+            raise ValueError("size must be >= 0")
+        if type(size) == float:
+            raise TypeError("size must be an integer")
+    i = 0
+    while (i < size):
+        print("#" * size)
+        i = i + 1
