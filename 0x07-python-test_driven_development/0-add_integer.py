@@ -6,6 +6,7 @@
     5 lines
 """
 
+
 def add_integer(a, b=98):
     """ Adds two numbers
     Args:
