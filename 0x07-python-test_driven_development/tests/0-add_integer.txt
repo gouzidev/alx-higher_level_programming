@@ -54,3 +54,11 @@ Test with float NaN:
 >>> add_integer(float('nan'), 3.1)
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
+
+>>> add_integer("This", (1)) #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError:...
+
+>>> add_integer(4, "Not") #doctest: +ELLIPSIS
+Traceback (most recent call last):
+TypeError:...
