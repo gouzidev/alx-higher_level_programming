@@ -26,6 +26,11 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
+>>> matrix_divided([[1, 2, 3]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
 >>> matrix_divided([[], []], 2) #doctest: +ELLIPSIS
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -89,3 +94,37 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 OverflowError: (34, 'Numerical result out of range')
+
+
+	>>> matrix = [[1, 2, 3,]]
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0]]
+
+	>>> matrix = [[1.1, 2.2, 3.3,]]
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0]]
+
+
+Test list containing lists with floats/integers:
+
+        >>> matrix = [[1.3, 2, 3.4], [4, 5.8, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.43, 0.67, 1.13], [1.33, 1.93, 2.0]]
+
+Test list containing one list:
+
+	>>> matrix = [[1, 2, 3]]
+        >>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0]]
+
+Test with no arguments:
+
+	>>> matrix_divided()
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Test with only one argument:
+
+	>>> matrix_divided(matrix)
+	Traceback (most recent call last):
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
