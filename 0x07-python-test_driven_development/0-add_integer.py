@@ -4,6 +4,8 @@
     The function returns two integers.
     5 line module comment.
 """
+
+
 def add_integer(a, b=98):
     """ Add two integers and returns the result.
     Args:
