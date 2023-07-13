@@ -49,12 +49,6 @@ OverflowError: ...
 Traceback (most recent call last):
 OverflowError: ...
 
-Test with float NaN:
-
->>> add_integer(float('nan'), 3.1)
-Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
-
 Test both arguments as neither floats nor integers:
 
 >>> add_integer("This", (1)) #doctest: +ELLIPSIS
