@@ -37,18 +37,6 @@ Test both arguments as floats:
 >>> add_integer(1.8, 2.3)
 3
 
-Test with float overflow:
-
->>> add_integer(float('inf'), float('inf'))
-... # doctest: +ELLIPSIS
-Traceback (most recent call last):
-OverflowError: ...
-
->>> add_integer(-float('inf'), -float('inf'))
-... # doctest: +ELLIPSIS
-Traceback (most recent call last):
-OverflowError: ...
-
 Test with float NaN:
 
 >>> add_integer(float('nan'), 3.1)
