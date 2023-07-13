@@ -58,6 +58,8 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> matrix_divided([[1,2], [-float('inf'), 5]], 1)
 [[1.0, 2.0], [-inf, 5.0]]
 
-
 >>> matrix_divided([[1,2], [-float('-inf'), 5]], 1)
 [[1.0, 2.0], [inf, 5.0]]
+
+>>> matrix_divided([[1,2], [4, 5]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
