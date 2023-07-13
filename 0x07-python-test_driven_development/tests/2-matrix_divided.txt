@@ -84,3 +84,8 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided([[1,2], [4, 5]], float('inf'))
 [[0.0, 0.0], [0.0, 0.0]]
+
+>>> matrix_divided([[1, 2, 3]], 3.0 ** 1024)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+OverflowError: (34, 'Numerical result out of range')
