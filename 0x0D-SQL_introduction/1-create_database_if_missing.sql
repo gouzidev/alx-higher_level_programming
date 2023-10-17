@@ -1,3 +1,3 @@
--- HU
-CREATE DATABASE "hbtn_0c_0";
+-- creatwe db
+CREATE DATABASE hbtn_0c_0;
 
