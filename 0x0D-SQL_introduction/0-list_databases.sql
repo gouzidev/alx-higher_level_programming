@@ -1,3 +1,0 @@
--- hi
-SHOW DATABASES;
-
